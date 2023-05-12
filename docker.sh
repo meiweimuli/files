@@ -15,7 +15,7 @@ apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin do
 
 ufw allow 1:65535/tcp
 
-cat<<EOF > docker-compose.yml
+cat<<EOF > docker-compose.yaml
 services:
   caddyray:
     image: gczran/caddyray:latest
