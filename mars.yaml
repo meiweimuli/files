@@ -8,7 +8,7 @@ ipv6: true
 proxies:
   - name: "h2"
     type: vmess
-    server: venus.mykuon.xyz
+    server: mars.mykuon.xyz
     port: 443
     uuid: 6b6f5969-0381-432a-939c-4ab6bc8c2350
     alterId: 0
