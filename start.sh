@@ -147,6 +147,9 @@ services:
     image: caddy
     networks:
       - v2net
+    ports:
+      - 443:443
+      - 80:80
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - ./html:/var/share/caddy/
@@ -155,9 +158,6 @@ services:
     image: v2fly/v2fly-core
     networks:
       - v2net
-    ports:
-      - 443:443
-      - 80:80
     volumes:
       - ./v2fly.json:/etc/v2fly/config.json
     restart: always
