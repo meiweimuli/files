@@ -169,7 +169,8 @@ services:
       - ./html:/var/share/caddy/
       - caddy_data:/data
     restart: always
-    depends_on: ddns
+    depends_on:
+      - ddns
   v2fly:
     image: v2fly/v2fly-core
     networks:
@@ -199,7 +200,7 @@ volumes:
     name: caddy_data
 EOF
 
-curl -L https://raw.githubusercontent.com/meiweimuli/files/main/clash.yaml -o html/clash.yaml
+curl -L https://raw.githubusercontent.com/meiweimuli/files/main/venus.yaml -o html/clash.yaml
 
 docker volume create caddy_data
 
