@@ -5,7 +5,6 @@ UUID=${UUID:-6b6f5969-0381-432a-939c-4ab6bc8c2350}
 WS_PATH=${WS_PATH:-/VR20tyGNis}
 H2_PATH=${H2_PATH:-/F5EW0ueeFZ}
 
-
 CF_KEY=${CF_TOKEN:-JFjniWL3pCpHFf0iVXLVPzCIO5Xzru4v9b9LN7C1}
 
 WS_PORT=21400
@@ -185,8 +184,8 @@ services:
     restart: always
     environment:
       - API_KEY=${CF_KEY}
-      - ZONE=$(echo ${url}|grep -P '[^.]*\.[^.]*$' -o)
-      - SUBDOMAIN=$(echo ${url}|grep -P '.*(?=(?:\.[^.]*){2}$)' -o)
+      - ZONE=$(echo ${DOMAIN}|grep -P '[^.]*\.[^.]*$' -o)
+      - SUBDOMAIN=$(echo ${DOMAIN}|grep -P '.*(?=(?:\.[^.]*){2}$)' -o)
       - RRTYPE=A
       - PROXIED=false
     network_mode: host
