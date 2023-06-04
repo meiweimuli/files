@@ -16,7 +16,7 @@ apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin do
 ufw allow 1:65535/tcp
 
 mkdir html
-cat <<EOF html/index.html
+cat <<EOF >html/index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +29,7 @@ cat <<EOF html/index.html
 </html>
 EOF
 
-cat <<EOF > Caddyfile
+cat <<EOF >Caddyfile
 mars.mykuon.xyz
 {
   log {
@@ -155,7 +155,7 @@ services:
     image: v2fly/v2fly-core
     networks:
       - v2net
-    -ports:
+    ports:
       - 443:443
       - 80:80
     volumes:
