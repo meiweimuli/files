@@ -77,7 +77,7 @@ cat <<EOF >v2fly.json
   "inbounds": [
     {
       "port": "23500",
-      "listen": "127.0.0.1",
+      "listen": "0.0.0.0",
       "protocol": "vmess",
       "settings": {
         "clients": [
@@ -99,7 +99,7 @@ cat <<EOF >v2fly.json
     },
     {
       "port": "21400",
-      "listen": "127.0.0.1",
+      "listen": "0.0.0.0",
       "protocol": "vmess",
       "settings": {
         "clients": [
