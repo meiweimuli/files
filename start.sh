@@ -58,7 +58,7 @@ mars.mykuon.xyz
     header_up Host api.openai.com
   }
 
-  reverse_proxy /fb* filebrowser:80
+  reverse_proxy /fb filebrowser:80
 
   file_server browse {
 	  root          /var/share/caddy/
@@ -145,7 +145,7 @@ services:
     volumes:
       - /:/srv
     environment:
-      - FB_BASEURL=/fb
+      - FB_BASE_URL=/fb
     restart: always
   caddy:
     image: caddy
@@ -164,12 +164,15 @@ services:
       - v2net
     volumes:
       - ./v2fly.json:/etc/v2fly/config.json
+    command: run -c /etc/v2fly/config.json
     restart: always
 
 networks:
   v2net:
     driver: bridge
 EOF
+
+curl -L https://raw.githubusercontent.com/meiweimuli/files/main/mars.yaml -o html/mars.yaml
 
 docker compose down
 docker compose up -d
