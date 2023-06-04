@@ -145,7 +145,7 @@ services:
     volumes:
       - /:/srv
     environment:
-      - FB_BASE_URL=/fb
+      - FB_BASEURL=/fb
     restart: always
   caddy:
     image: caddy
