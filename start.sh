@@ -77,7 +77,7 @@ cat <<EOF >v2fly.json
   "inbounds": [
     {
       "port": "23500",
-      "listen": "0.0.0.0",
+      "listen": "127.0.0.1",
       "protocol": "vmess",
       "settings": {
         "clients": [
@@ -99,7 +99,7 @@ cat <<EOF >v2fly.json
     },
     {
       "port": "21400",
-      "listen": "0.0.0.0",
+      "listen": "127.0.0.1",
       "protocol": "vmess",
       "settings": {
         "clients": [
@@ -157,6 +157,7 @@ services:
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - ./html:/var/share/caddy/
+      - caddy_data:/data
     restart: always
   v2fly:
     image: v2fly/v2fly-core
@@ -170,9 +171,16 @@ services:
 networks:
   v2net:
     driver: bridge
+
+volumes:
+  caddy_data:
+    external: true
+    name: caddy_data
 EOF
 
 curl -L https://raw.githubusercontent.com/meiweimuli/files/main/mars.yaml -o html/mars.yaml
+
+docker volume create caddy_data
 
 docker compose down
 docker compose up -d
