@@ -200,7 +200,7 @@ volumes:
     name: caddy_data
 EOF
 
-curl -L https://raw.githubusercontent.com/meiweimuli/files/main/venus.yaml -o html/clash.yaml
+curl -L https://raw.githubusercontent.com/meiweimuli/files/main/clash.yaml -o html/clash.yaml
 
 docker volume create caddy_data
 
