@@ -58,7 +58,7 @@ mars.mykuon.xyz
     header_up Host api.openai.com
   }
 
-  reverse_proxy /fb/* filebrowser:80
+  reverse_proxy /fb* filebrowser:80
 
   file_server browse {
 	  root          /var/share/caddy/
