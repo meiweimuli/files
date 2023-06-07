@@ -13,7 +13,7 @@ H2_PORT=23500
 ufw allow 1:65535/tcp
 
 # 安装docker
-if [ ! -$(command -v docker) ]; then
+if [ -z $(command -v docker) ]; then
   apt-get remove docker docker-engine docker.io containerd runc
   apt-get update
   apt-get -y install ca-certificates curl gnupg
