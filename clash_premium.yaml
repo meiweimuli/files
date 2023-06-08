@@ -36,7 +36,7 @@ proxy-groups:
   - name: "PROXY"
     type: select
     proxies:
-      - "auto"
+      - "AUTO"
       - "h2"
       - "ws"
   - name: "AUTO"
