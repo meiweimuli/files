@@ -201,6 +201,7 @@ volumes:
 EOF
 
 curl -L https://raw.githubusercontent.com/meiweimuli/files/main/clash.yaml | envsubst > html/clash.yaml
+curl -L https://github.com/meiweimuli/files/raw/main/clash_premium.yaml | envsubst > html/clash_premium.yaml
 
 docker volume create caddy_data
 
