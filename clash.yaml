@@ -4,32 +4,32 @@ mode: rule
 log-level: info
 external-controller: "0.0.0.0:9090"
 secret: ""
-ipv6: true
+ipv6: false
 proxies:
   - name: "h2"
     type: vmess
-    server: venus.mykuon.xyz
+    server: ${DOMAIN}
     port: 443
-    uuid: 6b6f5969-0381-432a-939c-4ab6bc8c2350
+    uuid: ${UUID}
     alterId: 0
     cipher: auto
     network: h2
     h2-opts:
       host:
-        - venus.mykuon.xyz
-      path: /F5EW0ueeFZ
+        - ${DOMAIN}
+      path: ${H2_PATH}
     tls: true
     skip-cert-verify: false
   - name: "ws"
     type: vmess
-    server: venus.mykuon.xyz
+    server: ${DOMAIN}
     port: 443
-    uuid: 6b6f5969-0381-432a-939c-4ab6bc8c2350
+    uuid: ${UUID}
     alterId: 0
     cipher: auto
     network: ws
     ws-opts:
-      path: /VR20tyGNis
+      path: ${WS_PATH}
     tls: true
     skip-cert-verify: false
 proxy-groups:
